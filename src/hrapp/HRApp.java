@@ -27,10 +27,6 @@ public class HRApp {
         d1.addEmployee(emp1);
         d1.addEmployee(new Employee(102, "Sung", 1200.34));
         d1.addEmployee(emp3);
-//        int eId = 101;
-//        Employee foundEmployee = d1.findEmployeeById(eId);
-//        String msg = (foundEmployee != null && foundEmployee.getID() == eId) ? foundEmployee.toString() : "No employee found with this id";
-//        System.out.println(msg);
 
         Employee[] allEmpls = d1.getEmployees();
         for (Employee em : allEmpls) {
@@ -39,6 +35,8 @@ public class HRApp {
         
         System.out.println("Total of Employee salaries: " + d1.getTotalSalary());
         System.out.println("Average salary in the department: " + d1.getAvgSalary());
+        
+        System.out.println(d1.getEmployeeById(22));
     }
 
 }

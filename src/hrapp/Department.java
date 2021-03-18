@@ -49,8 +49,10 @@ public class Department {
 
     public Employee getEmployeeById(int empId) {
         for (Employee emp : employees) {
-            if (emp.getID() == empId) {
-                return emp;
+            if (emp != null) {
+                if (emp.getID() == empId) {
+                    return emp;
+                }
             }
         }
         return null;
@@ -79,7 +81,7 @@ public class Department {
 
     public double getTotalSalary() {
         double totalSalary = 0.0;
-        for (int i=0; i <= lastAddedEmployeeIndex; i++) {
+        for (int i = 0; i <= lastAddedEmployeeIndex; i++) {
             totalSalary += employees[i].getSalary();
         }
         return totalSalary;
@@ -88,8 +90,8 @@ public class Department {
     public double getAvgSalary() {
         /*
         To calculate avera salary of employees
-        */
-        return lastAddedEmployeeIndex > -1 ? getTotalSalary() / (lastAddedEmployeeIndex+1) : 0.0;
+         */
+        return lastAddedEmployeeIndex > -1 ? getTotalSalary() / (lastAddedEmployeeIndex + 1) : 0.0;
     }
 
 }
