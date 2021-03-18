@@ -11,6 +11,25 @@ package hrapp;
  */
 public class Department {
     private final Employee[] employees = new Employee[10];
+    private String name;
+    
+    public Department(){}
+    public Department(String dName){
+        name = dName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public String toString(){
+        return name;
+    }
     
     public void addEmployee(Employee employee){
         int counter = 0;
@@ -40,6 +59,10 @@ public class Department {
         return emps;
     }
     
+    public int getNumberOfEmployees(){
+        return getEmployees().length;
+    }
+    
     public Employee findEmployeeById(int Id){
         Employee newEmp = new Employee();
         Employee[] emps = getEmployees();
@@ -59,6 +82,13 @@ public class Department {
             total += emp.getSalary();
         }
         return total;
+    }
+    
+    public double getAvgSalary(){
+        double totalSalary = getTotalSalaries();
+        int numOfEmps = getNumberOfEmployees();
+        double avgSal = numOfEmps != 0 ? totalSalary / numOfEmps : 0;
+        return avgSal;
     }
     
 }

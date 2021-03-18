@@ -19,13 +19,15 @@ public class HRApp {
 
         System.out.println("HR App Stars");
         Department d1 = new Department();
-        d1.toString();
+        d1.setName("Education");
+        System.out.println("Department " + d1.toString());
+        
         Employee emp1 = new Employee(101, "Jim", 1234.56);
         Employee emp2 = new Employee(102, "Sung", 1200.34);
         Employee emp3 = new Employee(103, "Rash", 1122.33);
 
         d1.addEmployee(emp1);
-        d1.addEmployee(emp2);
+//        d1.addEmployee(emp2);
         d1.addEmployee(emp3);
 //        int eId = 101;
 //        Employee foundEmployee = d1.findEmployeeById(eId);
@@ -36,13 +38,9 @@ public class HRApp {
         for (Employee em : allEmpls) {
             System.out.println(em.toString());
         }
-        double totalSalaries = d1.getTotalSalaries();
-        int numOfEmployees = d1.getEmployees().length;
-        double avgSalary = numOfEmployees != 0 ? totalSalaries / numOfEmployees : 0;
-
-        System.out.println("Total of Employee salaries: " + totalSalaries);
-        System.out.println("Average salary in the department: " + avgSalary);
-
+        
+        System.out.println("Total of Employee salaries: " + d1.getTotalSalaries());
+        System.out.println("Average salary in the department: " + d1.getAvgSalary());
     }
 
 }

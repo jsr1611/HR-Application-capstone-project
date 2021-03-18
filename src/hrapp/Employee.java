@@ -8,7 +8,7 @@ package hrapp;
 
 /**
  *
- * @author opc
+ * @author Jumanazar Saidov
  */
 public class Employee {
     private int ID;
